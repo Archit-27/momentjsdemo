@@ -1,0 +1,25 @@
+.container {
+overflow: hidden; 
+background-color: whitesmoke;
+height: 100vh;
+}
+
+.time_Section {
+  display: flex;
+  height: calc(100vh - 160px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_Section {
+  padding-top: 50px;
+  width: 20%;
+  margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .dropdown_Section {
+    width: 100%;
+  }
+}

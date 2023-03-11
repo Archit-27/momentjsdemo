@@ -1,0 +1,30 @@
+.clock_Wrapper{
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.clock {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(45deg, blue, lightblue);
+  border: 3px solid black;
+  border-radius: 50%;
+  position: relative;
+}
+.minute, .second, .hour {
+  position: absolute;
+  border: 2px solid black;
+  top: 50%;
+  right: 50%;
+  transform-origin: 100%;
+}
+.minute {
+  width: 40%;
+}
+.second {
+  width: 45%;
+}
+.hour {
+  width: 25%;
+}
