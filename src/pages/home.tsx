@@ -16,7 +16,7 @@ const HomePage = () => {
   const filteredDropDownItems = dropdownItems.filter((i) => i !== dropdownTitle)
   return (
     <div className={styles.container}>
-      <div>
+      <h2 className={styles.dropdown_label}>Select Language to get Current Time</h2>
         <div className={styles.dropdown_Section}>
           <LanguageSelectionDropDown
             label='Select Language to get Current Time'
@@ -29,7 +29,6 @@ const HomePage = () => {
             <DisplayTime />
           </div>
         }
-      </div>
     </div>
   )
 }

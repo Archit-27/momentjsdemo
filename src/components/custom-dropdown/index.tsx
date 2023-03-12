@@ -40,7 +40,6 @@ export const LanguageSelectionDropDown: FC<ILanguageSelectionDropDown> = (
 
   return (
     <div className={styles.language_Dropdown}>
-      {label && <h2 className={styles.dropdown_label}>{label}</h2>}
       <div className={styles.dropdown_contain} ref={dropDownRef}>
         <Button className={styles.dropdown_btn} onClick={toggleDropDown}>
           {title}

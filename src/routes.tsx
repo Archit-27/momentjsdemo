@@ -1,5 +1,5 @@
 import { useRoutes } from 'react-router-dom'
-import HomePage from './pages.tsx/home'
+import HomePage from './pages/home'
 
 const routes = [
   {
