@@ -1,6 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
 import moment from 'moment-timezone';
-import { getCountry } from 'countries-and-timezones';
 import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { Clock } from '../clock';
@@ -16,10 +15,11 @@ export const DisplayTime = () => {
     minutesDegrees: 0,
     hoursDegrees: 0,
   });
-  const lang = searchParms.get('lang');
-  const countryCode: any = lang?.match(/[A-Z]{2}/g)?.toString() ?? 'US';
-  const country = getCountry(countryCode) ?? {};
-  const timeZone = country?.timezones?.[0] ?? '';
+  const timeZone = searchParms.get('tz');
+  const country = searchParms.get('country');
+  // const countryCode: any = lang?.match(/[A-Z]{2}/g)?.toString() ?? 'US';
+  // const country = getCountry(countryCode) ?? {};
+  // const timeZone = country?.timezones?.[0] ?? '';
   useEffect(() => {
     const timeInterval = setInterval(() => {
       const currentTimeZone = moment().tz(timeZone ?? '')
@@ -39,7 +39,8 @@ export const DisplayTime = () => {
 
   return (
     <>
-      <h2>Country: {country?.name}</h2>
+      <h2>Country: {country}</h2>
+      <h2>Timezone: {timeZone}</h2>
       <Clock clockDegs={clockDegs} />
       <span className={styles.time_Text}>{currentDateTime.currentTime}</span>
       <h2 className={styles.date_Text}>{currentDateTime.currentDate}</h2>

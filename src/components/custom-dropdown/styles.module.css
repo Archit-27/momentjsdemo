@@ -3,7 +3,9 @@
 }
 
 .dropdown_btn {
-  background-color: white;
+  background-color: black;
+  color: white;
+  font-size: 18px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -15,7 +17,11 @@
   margin-left: 20px;
   width: 18px;
   transition: 0.2s all ease;
+}
 
+.dropdownItem_Wrapper {
+display: flex;
+flex-direction: column;
 }
 
 .dropdown_Items {
@@ -48,9 +54,32 @@
 }
 
 .dropdown_Item {
-  background-color: white;
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 .dropdown_Item:hover {
+  background-color: #1277ae;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.dropdowntz_Item {
+  background-color: white;
+}
+
+.dropdowntz_Item:hover {
   background-color: lightgray;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.selected_Item {
+  background-color: lightgray;
+  font-weight: 500;
+  font-size: 16px;
 }

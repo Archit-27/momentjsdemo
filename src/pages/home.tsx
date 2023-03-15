@@ -12,16 +12,14 @@ const HomePage = () => {
     'pt-BR',
   ];
   const lang = searchParms.get('lang');
-  const dropdownTitle = dropdownItems.find((d) => d === lang);
-  const filteredDropDownItems = dropdownItems.filter((i) => i !== dropdownTitle)
+  const timezone = searchParms.get('tz');
   return (
     <div className={styles.container}>
-      <h2 className={styles.dropdown_label}>Select Language to get Current Time</h2>
+      <h2 className={styles.dropdown_label}>Select timezone to get Current Time</h2>
         <div className={styles.dropdown_Section}>
           <LanguageSelectionDropDown
-            label='Select Language to get Current Time'
-            title={dropdownTitle || 'select Language'}
-            items={filteredDropDownItems}
+            title={lang ? `${lang} (${timezone})` : 'select TimeZone'}
+            items={dropdownItems}
           />
         </div>
         {lang &&
