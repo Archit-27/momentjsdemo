@@ -3,6 +3,9 @@ import { useEffect } from 'react';
 const useOnClickOutside = (ref: any, handler: any) => {
   useEffect(() => {
     const listener = (event: any) => {
+      if (event.offsetX > event.target.clientWidth || event.offsetY > event.target.clientHeight) {
+        return;
+      }
       if (!ref.current || ref.current.contains(event.target)) {
         return;
       }
